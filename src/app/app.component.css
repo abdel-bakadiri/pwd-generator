@@ -1,0 +1,13 @@
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.header-pwd {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+.is-large {
+  width: 100%;
+  height: 50px;
+}

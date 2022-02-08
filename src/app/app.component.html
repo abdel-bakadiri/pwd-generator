@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <h1 class="header-pwd">Pasword genrator</h1>
+        <div class="field">
+          <label class="label"> Enter length :</label>
+          <div class="control">
+            <input
+              class="input"
+              #inputLenghtPwd
+              (input)="onInput(inputLenghtPwd.value)"
+              type="number"
+            />
+          </div>
+        </div>
+        <div>
+          <label class="checkbox">
+            <input (change)="onChangeUsesymboles()" type="checkbox" />
+            Use Symbols
+          </label>
+        </div>
+        <div>
+          <label class="checkbox">
+            <input (change)="onChangeUseNumbers()" type="checkbox" />
+            Use Numbers
+          </label>
+        </div>
+        <div>
+          <label class="checkbox">
+            <input (change)="onChangeUseCharacters()" type="checkbox" />
+            Use characters
+          </label>
+        </div>
+        <div class="control">
+          <button
+            class="button is-link is-large"
+            [disabled]="
+              !(lengthPwd && (isUseCharacters || isUseSymbols || isUseNumbers))
+            "
+            (click)="onButtonClick()"
+          >
+            Generate!
+          </button>
+        </div>
+        <div class="field" *ngIf="generatedPassWord">
+          <label class="label"> Your password: </label>
+          <div class="control">
+            <input class="input" type="text" [value]="generatedPassWord" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
